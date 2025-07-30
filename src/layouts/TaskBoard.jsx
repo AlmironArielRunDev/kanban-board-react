@@ -17,14 +17,6 @@ import {
 import { produce } from "immer";
 import { useContext, useMemo } from "react";
 
-/**
- * @param {Object}  - The props object.
- * @param {Array} data - The data array containing board information.
- * @param {number} select - The index of the selected board.
- * @returns {JSX.Element} The TaskBoard component.
- * @description The TaskBoard component renders a task board with columns and tasks.
- */
-
 export function TaskBoard() {
   const { data, select, setData } = useContext(Context);
   const board = data && data[select]?.columns;
@@ -134,7 +126,7 @@ export function TaskBoard() {
   const handleAddColumn = () => {
     const newColumn = {
       id: Date.now(),
-      title: `New Column`,
+      title: `Nueva Columna`,
       tasks: [],
     };
 
@@ -169,7 +161,7 @@ export function TaskBoard() {
         onClick={data?.length > 0 ? handleAddColumn : null}
         isDisabled={data?.length === 0}
       >
-        + New Column
+        + Nueva Columna
       </Button>
     </main>
   );

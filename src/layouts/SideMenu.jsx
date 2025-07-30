@@ -4,15 +4,6 @@ import { useContext, useState } from "react";
 import { Context } from "@/ContextApp";
 import iconBoard from "@assets/icon-board.svg";
 
-/**
- * @param {Object} props - The props object.
- * @param {Array} props.data - The data array containing board information.
- * @param {number} props.select - The index of the selected board.
- * @param {Function} props.setSelect - The function to set the selected board index.
- * @returns {JSX.Element} The SideMenu component.
- * @description The SideMenu component renders a side menu with a list of boards and a button to create a new board.
- */
-
 export function SideMenu() {
   const [open, setOpen] = useState(false);
 
@@ -20,7 +11,7 @@ export function SideMenu() {
 
   return (
     <aside className="-mt-px w-[300px] border-r border-lines-light bg-white">
-      <p className="px-8 py-4 text-heading-s">ALL BOARDS ({data?.length})</p>
+      <p className="px-8 py-4 text-heading-s">Todos los tableros ({data?.length})</p>
       <ul>
         {data?.map((item, index) => (
           <li
@@ -44,15 +35,15 @@ export function SideMenu() {
           <CustomDialog
             isOpen={open}
             setOpen={setOpen}
-            title="Add New Board"
+            title="Agregar Nuevo Tablero"
             triggerComponent={
               <button className="flex w-full items-center gap-4 text-heading-m text-main-purple">
-                <img src={iconBoard} alt="icon-board" /> + Create New Board
+                <img src={iconBoard} alt="icon-board" /> + Crear Nuevo Tablero
               </button>
             }
-            description="You can create a new board here."
+            description="Puede crear un nuevo tablero aquí."
           >
-            <CreateAndEditBoard setOpen={setOpen} Action="Create New Board"/>
+            <CreateAndEditBoard setOpen={setOpen} Action="Crear Nuevo Tablero"/>
           </CustomDialog>
         </li>
       </ul>

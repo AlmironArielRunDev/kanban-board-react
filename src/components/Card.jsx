@@ -51,7 +51,6 @@ export function Card({ columnId, id: CardId, title, description }) {
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isEditing, draftTitle, draftDescription]);
 
   const handleDeleteTask = () => {
@@ -136,7 +135,7 @@ export function Card({ columnId, id: CardId, title, description }) {
         className="absolute bottom-0 right-0 top-0 bg-white p-2 text-body-m text-red opacity-0 shadow duration-300 group-hover/card:opacity-100"
         onClick={handleDeleteTask}
       >
-        Delete
+        Eliminar
       </button>
     </div>
   );

@@ -4,13 +4,6 @@ import { Context } from "@/ContextApp";
 import { produce } from "immer";
 import { useDroppable } from "@dnd-kit/core";
 
-/**
- * @param {Object} props - The props object.
- * @param {string} props.title - The title of the column.
- * @param {Array} props.tasks - The array of tasks in the column.
- * @returns {JSX.Element} The Column component.
- * @description The Column component renders a column with a title and a list of tasks.
- */
 
 export function Column(props) {
   const { id: ColumnId, title, tasks } = props;
@@ -24,8 +17,8 @@ export function Column(props) {
   const handleAddNewTask = () => {
     const newTask = {
       id: Date.now(),
-      title: "New Task",
-      description: "Task description",
+      title: "Nueva Tarea",
+      description: "Descripción",
     };
 
     const newColumns = data[select]?.columns?.map((column) => {
@@ -44,7 +37,7 @@ export function Column(props) {
   };
 
   const handleDeleteColumn = () => {
-    if (window.confirm(`Are you sure you want to delete this "${title}"?`)) {
+    if (window.confirm(`Está seguro que desea eliminar esto "${title}"?`)) {
       setData((prev) =>
         produce(prev, (draft) => {
           draft[select].columns = draft[select]?.columns?.filter(
@@ -66,7 +59,7 @@ export function Column(props) {
           className="absolute bottom-0 right-0 top-0 p-2 text-body-m text-red opacity-0 duration-300 focus:opacity-100 group-hover/column:opacity-100"
           onClick={handleDeleteColumn}
         >
-          Delete
+          Eliminar
         </button>
       </h2>
       <div className="mb-5 flex flex-col gap-5 transition-all duration-200 ease-in-out">
@@ -86,7 +79,7 @@ export function Column(props) {
         isFullWidth={true}
         onClick={handleAddNewTask}
       >
-        + Add New Task
+        + Agregar Nueva Tarea
       </Button>
     </div>
   );

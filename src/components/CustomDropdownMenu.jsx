@@ -1,15 +1,6 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import clsx from "clsx";
 
-/**
- *  @param {Object} props
- * @param {function} props.triggerComponent - The component to display as the trigger for the dropdown
- * @param {Array} props.items - The items to display in the dropdown
- * @param {string} props.items[].label - The text to display in the dropdown
- * @param {function} props.items[].onClick - The function to run when the item is clicked
- * @returns {JSX.Element}
- */
-
 export function CustomDropdownMenu({ triggerComponent, items }) {
   return (
     <DropdownMenu.Root modal={false}>
@@ -27,7 +18,7 @@ export function CustomDropdownMenu({ triggerComponent, items }) {
                 className={clsx(
                   "group p-4 text-body-l leading-none outline-none data-[highlighted]:bg-light-grey",
                   {
-                    "text-red": items[item].label.includes("Delete"),
+                    "text-red": items[item].label.includes("Eliminar"),
                     "cursor-pointer": items[item].isActive,
                     "cursor-not-allowed opacity-50": !items[item].isActive,
                   },

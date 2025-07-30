@@ -1,16 +1,5 @@
 import * as Dialog from "@radix-ui/react-dialog";
 
-/**
- * CustomDialog component
- * @param {Object} props
- * @param {string} props.title - The title of the dialog
- * @param {JSX.Element} props.triggerComponent - The component that triggers the dialog
- * @param {JSX.Element} props.children - The children components
- * @param {boolean} props.isOpen - A boolean to determine if the dialog is open
- * @param {Function} props.setOpen - A function to set the dialog state
- * @returns {JSX.Element}
- */
-
 export function CustomDialog({
   title,
   triggerComponent,
